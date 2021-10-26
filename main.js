@@ -7,30 +7,34 @@
 
 const playEmail = document.getElementById('playEmail');
 
-
 playEmail.addEventListener('click' , function() {
 
     let containerMail = [ 'cicciobaciccio@gmail.com','pippoepluto@gmail.com', 'giovanniplayer@gmail.com' ];
 
     let emailUser = prompt ('Inserire la propria email').trim().toLowerCase();
 
-    let userfound = false;
+    if(emailUser == ''){
+        alert("Il valore inserito non è valido");
+    } else{
 
-    for(i = 0; i < containerMail.length; i++){
+        let userfound = false;
 
-        if(containerMail[i] === emailUser){
-            userfound = true;
-            break;
+        for(i = 0; i < containerMail.length; i++){
+
+            if(containerMail[i] === emailUser){
+                userfound = true;
+                break;
+            }
         }
-    }
 
-    if(userfound == true){
+        if(userfound == true){
 
-        alert("l'email inserita è corretta");
-    }
+            alert("l'email inserita è corretta");
+        }
 
-    else {
+        else {
 
-        alert("ATTENZIONE l'email inserita non è stata trovata nel nostro database");
+            alert("ATTENZIONE l'email inserita non è stata trovata nel nostro database");
+        }
     }
 });
